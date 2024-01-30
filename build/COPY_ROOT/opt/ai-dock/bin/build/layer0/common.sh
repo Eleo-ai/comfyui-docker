@@ -1,7 +1,7 @@
 #!/bin/false
 
 source /opt/ai-dock/etc/environment.sh
-comfyui_git="https://github.com/comfyanonymous/ComfyUI"
+comfyui_git="https://github.com/KubaBir/ComfyUI"
 
 build_common_main() {
     build_common_create_env
