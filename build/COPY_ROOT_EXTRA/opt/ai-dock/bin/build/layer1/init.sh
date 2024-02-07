@@ -9,6 +9,7 @@ NODES=(
     "https://github.com/twri/sdxl_prompt_styler"
     "https://github.com/Derfuu/Derfuu_ComfyUI_ModdedNodes"
     "https://github.com/pythongosssss/ComfyUI-WD14-Tagger"
+    "https://github.com/Tropfchen/ComfyUI-Embedding_Picker"
 )
 
 CHECKPOINT_MODELS=(
@@ -54,6 +55,10 @@ CONTROLNET_MODELS=(
     #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/t2iadapter_style-fp16.safetensors"
 )
 
+EMBEDDING_MODELS=(
+    "https://civitai.com/api/download/models/9208?type=Model&format=SafeTensor&size=full&fp=fp16"
+)
+
 BLIP_MODELS=( 
 )
 
@@ -76,6 +81,9 @@ function build_extra_start() {
     build_extra_get_models \
         "/opt/storage/stable_diffusion/models/esrgan" \
         "${ESRGAN_MODELS[@]}"
+    build_extra_get_models \
+        "/opt/storage/stable_diffusion/models/embeddings" \
+        "${EMBEDDING_MODELS[@]}"
     build_extra_get_models \
         "/opt/storage/stable_diffusion/models/blip/checkpoints" \
         "${BLIP_MODELS[@]}"
