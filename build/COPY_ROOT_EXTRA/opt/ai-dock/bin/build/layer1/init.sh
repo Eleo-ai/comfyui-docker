@@ -4,12 +4,13 @@
 
 NODES=(
     "https://github.com/ltdrdata/ComfyUI-Manager"
-    "https://github.com/WASasquatch/was-node-suite-comfyui"
-    "https://github.com/rgthree/rgthree-comfy"
-    "https://github.com/twri/sdxl_prompt_styler"
-    "https://github.com/Derfuu/Derfuu_ComfyUI_ModdedNodes"
-    "https://github.com/pythongosssss/ComfyUI-WD14-Tagger"
+    "https://github.com/WASasquatch/was-node-suite-comfyui" # utils, img2img tagger
+    "https://github.com/rgthree/rgthree-comfy" # utils
+    "https://github.com/twri/sdxl_prompt_styler" # sdxl utils
+    "https://github.com/Derfuu/Derfuu_ComfyUI_ModdedNodes" # sizing utils
+    "https://github.com/pythongosssss/ComfyUI-WD14-Tagger" # Anime img2img tagger
     "https://github.com/Tropfchen/ComfyUI-Embedding_Picker"
+    "https://github.com/ltdrdata/ComfyUI-Inspire-Pack" # Checkpoint load caching
 )
 
 CHECKPOINT_MODELS=(
