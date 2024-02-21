@@ -11,6 +11,9 @@ NODES=(
     "https://github.com/pythongosssss/ComfyUI-WD14-Tagger" # Anime img2img tagger
     "https://github.com/Tropfchen/ComfyUI-Embedding_Picker"
     "https://github.com/ltdrdata/ComfyUI-Inspire-Pack" # Checkpoint load caching
+    "https://github.com/ssitu/ComfyUI_UltimateSDUpscale" # Upscaling
+    "https://github.com/marhensa/sdxl-recommended-res-calc" # Upscaling
+    "https://github.com/evanspearman/ComfyMath"
 )
 
 CHECKPOINT_MODELS=(
