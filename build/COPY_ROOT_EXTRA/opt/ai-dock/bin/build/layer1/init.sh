@@ -2,6 +2,11 @@
 
 # Use this layer to add nodes and models
 
+# Packages are installed after nodes so we can fix them...
+PYTHON_PACKAGES=(
+    #"opencv-python==4.7.0.72"
+)
+
 NODES=(
     "https://github.com/ltdrdata/ComfyUI-Manager"
     "https://github.com/WASasquatch/was-node-suite-comfyui" # utils, img2img tagger
@@ -70,6 +75,7 @@ BLIP_MODELS=(
 
 function build_extra_start() {
     build_extra_get_nodes
+    build_extra_install_python_packages
     build_extra_get_models \
         "/opt/storage/stable_diffusion/models/ckpt" \
         "${CHECKPOINT_MODELS[@]}"
@@ -127,6 +133,12 @@ function build_extra_get_nodes() {
     done
 }
 
+function build_extra_install_python_packages() {
+    if [ ${#PYTHON_PACKAGES[@]} -gt 0 ]; then
+        micromamba -n comfyui run ${PIP_INSTALL} ${PYTHON_PACKAGES[*]}
+    fi
+}
+
 function build_extra_get_models() {
     if [[ -n $2 ]]; then
         dir="$1"
@@ -148,4 +160,7 @@ function build_extra_download() {
     wget -qnc --content-disposition --show-progress -e dotbytes="${3:-4M}" -P "$2" "$1"
 }
 
+umask 002
+
 build_extra_start
+fix-permissions.sh -o container
